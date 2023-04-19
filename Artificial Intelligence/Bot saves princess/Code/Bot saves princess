@@ -1,0 +1,38 @@
+  #!/usr/bin/python
+
+from queue import Queue
+
+def displayPathtoPrincess(n, grid):
+    # find the starting position of bot and princess
+    for i in range(n):
+        for j in range(n):
+            if grid[i][j] == 'm':
+                bot_pos = (i, j)
+            elif grid[i][j] == 'p':
+                princess_pos = (i, j)
+    
+    # define the possible moves
+    moves = {'LEFT': (0, -1), 'RIGHT': (0, 1), 'UP': (-1, 0), 'DOWN': (1, 0)}
+    
+    # perform BFS to find the shortest path to princess
+    q = Queue()
+    visited = set()
+    q.put((bot_pos, ''))
+    visited.add(bot_pos)
+    while not q.empty():
+        pos, path = q.get()
+        if pos == princess_pos:
+            print(path)
+            return
+        for move, direction in moves.items():
+            next_pos = (pos[0] + direction[0], pos[1] + direction[1])
+            if 0 <= next_pos[0] < n and 0 <= next_pos[1] < n and next_pos not in visited and grid[next_pos[0]][next_pos[1]] != 'x':
+                q.put((next_pos, path + move + '\n'))
+                visited.add(next_pos)
+
+m = int(input())
+grid = [] 
+for i in range(0, m): 
+    grid.append(input().strip())
+
+displayPathtoPrincess(m, grid)
