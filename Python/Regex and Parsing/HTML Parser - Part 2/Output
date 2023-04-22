@@ -1,0 +1,23 @@
+Input (stdin)
+4
+<!--[if IE 9]>IE9-specific content
+<![endif]-->
+<div> Welcome to HackerRank</div>
+<!--[if IE 9]>IE9-specific content<![endif]-->
+Your Output (stdout)
+>>> Multi-line Comment
+[if IE 9]>IE9-specific content
+<![endif]
+>>> Data
+ Welcome to HackerRank
+>>> Single-line Comment
+[if IE 9]>IE9-specific content<![endif]
+Expected Output
+>>> Multi-line Comment
+[if IE 9]>IE9-specific content
+<![endif]
+>>> Data
+ Welcome to HackerRank
+>>> Single-line Comment
+[if IE 9]>IE9-specific content<![endif]
+BlogScoringEnvironmentFAQAbout UsSupportCareersTerms Of ServicePrivacy Policy
