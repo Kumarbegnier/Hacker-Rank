@@ -1,35 +1,37 @@
-# Hacker-Rank-Artificial-Intelligence
-#Solved problem Hacker Rank Artificial Intelligence 
+# Hacker-Rank-Python
+#Solved problem Hacker Rank Python 
 
 
 #Problem statement 
-Princess Peach is trapped in one of the four corners of a square grid. You are in the center of the grid and can move one step at a time in any of the four directions. Can you rescue the princess?
+A valid email address meets the following criteria:
+• It's composed of a username, domain name, and extension assembled in this format: username@domain.extension
+• The username starts with an English alphabetical character, and any subsequent characters consist of one or more of the following: alphanumeric characters, -,., and __.
+• The domain and extension contain only English alphabetical characters.
+• The extension is 1, 2, or 3 characters in length.
+Given n pairs of names and email addresses as input, print each name and email address pair having a valid email address on a new line.
+Hint: Try using Email.utils() to complete this challenge. For example, this code:
+import email.utils
+print email.utils.parseaddr ('DOSHI <DOSHI @hackerrank.com>') print email.utils.formataddr (('DOSHI', 'DOSHI@hackerrank.com'))
+produces this output:
+('DOSHI', 'DOSHI@hackerrank.com')
+DOSHI <DOSHI@hackerrank.com>
+Input Format
+The first line contains a single integer, n, denoting the number of email address.
+Each line of the subsequent lines contains a name and an email address as two space-separated values following this format:
+name <user@email.com>
+Constraints
+⚫ 0 < n < 100                                                                                                                                                                                                 ﻿
 
-Input format
-
-The first line contains an odd integer N (3 <= N < 100) denoting the size of the grid. This is followed by an NxN grid. Each cell is denoted by '-' (ascii value: 45). The bot position is denoted by 'm' and the princess position is denoted by 'p'.
-
-Grid is indexed using Matrix Convention
-
-Output format
-
-Print out the moves you will take to rescue the princess in one go. The moves must be separated by '\n', a newline. The valid moves are LEFT or RIGHT or UP or DOWN.
-
-Sample input
-
-3
----
--m-
-p--
-Sample output
-
-DOWN
-LEFT
-Task
-
-Complete the function displayPathtoPrincess which takes in two parameters - the integer N and the character array grid. The grid will be formatted exactly as you see it in the input, so for the sample input the princess is at grid[2][0]. The function shall output moves (LEFT, RIGHT, UP or DOWN) on consecutive lines to rescue/reach the princess. The goal is to reach the princess in as few moves as possible.
-
-The above sample input is just to help you understand the format. The princess ('p') can be in any one of the four corners.
-
-Scoring
-Your score is calculated as follows : (NxN - number of moves made to rescue the princess)/10, where N is the size of the grid (3x3 in the sample testcase).
+Output Format
+Print the space-separated name and email address pairs containing valid email addresses only. Each pair must be printed on a new line in the following format:
+name <user@email.com>
+You must print each valid email address in the same order as it was received as input.
+Sample Input
+2
+DEXTER <dexter@hotmail.com>
+VIRUS <virus! @variable.:p>
+Sample Output
+DEXTER <dexter@hotmail.com>
+Explanation
+dexter@hotmail.com is a valid email address, so we print the name and email address pair received as input on a new line.
+virus!@variable.:p is not a valid email address because the username contains an exclamation point (!) and the extension contains a colon (:). As this email is not valid, we print nothing.
