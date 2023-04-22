@@ -1,0 +1,8 @@
+Input (stdin)
+2
+DEXTER <dexter@hotmail.com>
+VIRUS <virus!@variable.:p>
+Your Output (stdout)
+DEXTER <dexter@hotmail.com>
+Expected Output
+DEXTER <dexter@hotmail.com>
