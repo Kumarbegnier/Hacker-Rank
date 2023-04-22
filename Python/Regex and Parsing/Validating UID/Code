@@ -1,28 +1,27 @@
 import re
 
-# compile the regular expressions
-regex_uppercase = re.compile(r"[A-Z]{2}")
-regex_digits = re.compile(r"\d{3}")
-regex_alphanumeric = re.compile(r"\w")
-regex_repeating = re.compile(r"(\w).*\1")
-regex_length = re.compile(r"^\w{10}$")
+def is_valid_uid(uid):
+    # Check if UID contains at least 2 uppercase English alphabet characters
+    if not re.search(r'[A-Z].*[A-Z]', uid):
+        return False
 
-# read the number of test cases
-t = int(input().strip())
+    # Check if UID contains at least 3 digits (0-9)
+    if not re.search(r'\d.*\d.*\d', uid):
+        return False
 
-# process each test case
-for _ in range(t):
-    # read the UID
+    # Check if UID contains only alphanumeric characters and has no repeated characters
+    if not re.match(r'^[a-zA-Z0-9]{10}$', uid) or re.search(r'(.).*\1', uid):
+        return False
+
+    return True
+
+# Read the number of test cases
+t = int(input())
+
+# Process each test case
+for i in range(t):
     uid = input().strip()
-
-    # check if the UID is valid
-    if (
-        regex_uppercase.search(uid) 
-        and regex_digits.search(uid)
-        and regex_alphanumeric.search(uid)
-        and not regex_repeating.search(uid)
-        and regex_length.search(uid)
-    ):
-        print("Valid")
+    if is_valid_uid(uid):
+        print('Valid')
     else:
-        print("Invalid")
+        print('Invalid')
