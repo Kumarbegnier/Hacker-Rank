@@ -2,7 +2,9 @@
 #Solved problem Hacker Rank Python 
 
 
-#Problem statement 
+**#Problem statement** 
+ 
+ 
 A valid email address meets the following criteria:
 • It's composed of a username, domain name, and extension assembled in this format: username@domain.extension
 • The username starts with an English alphabetical character, and any subsequent characters consist of one or more of the following: alphanumeric characters, -,., and __.
