@@ -1,0 +1,28 @@
+import re
+
+# compile the regular expressions
+regex_uppercase = re.compile(r"[A-Z]{2}")
+regex_digits = re.compile(r"\d{3}")
+regex_alphanumeric = re.compile(r"\w")
+regex_repeating = re.compile(r"(\w).*\1")
+regex_length = re.compile(r"^\w{10}$")
+
+# read the number of test cases
+t = int(input().strip())
+
+# process each test case
+for _ in range(t):
+    # read the UID
+    uid = input().strip()
+
+    # check if the UID is valid
+    if (
+        regex_uppercase.search(uid) 
+        and regex_digits.search(uid)
+        and regex_alphanumeric.search(uid)
+        and not regex_repeating.search(uid)
+        and regex_length.search(uid)
+    ):
+        print("Valid")
+    else:
+        print("Invalid")
