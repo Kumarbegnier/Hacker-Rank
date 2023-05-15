@@ -3,9 +3,7 @@ A complex number z
 Capture.PNG
 z = x + yj
 is completely determined by its real part and imaginary party. Here, j is the imaginary unit.
-r
-(r, c)
-Φ
+![image](https://github.com/Kumarbegnier/Hacker-Rank/assets/49531334/8e578b81-2a35-4185-bba4-c06275d1a6d8)
 → Polar Axis
 A polar coordinate (r, c)
 is completely determined by modulus and phase angle .
